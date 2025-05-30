@@ -42,14 +42,18 @@ function playRound(humanChoice, computerChoice) {
   }
 
   if (humanScore === 5 || computerScore === 5) {
-    console.log("Game Over");
+    const div = document.createElement("div");
+    div.innerHTML = "Game Over <br>";
     if (humanScore > computerScore) {
-      console.log("You Win!!!");
-    } else if (computerScore > humanScore) {
-      console.log("You Lose :(");
+      const status = document.createTextNode("You Win!!!");
+      div.appendChild(status);
     } else {
-      console.log("It's a draw!");
+      const status = document.createTextNode("You Lose :(");
+      div.appendChild(status);
     }
+
+    document.body.appendChild(div);
+
     humanScore = 0;
     computerScore = 0;
   }
@@ -58,8 +62,8 @@ function playRound(humanChoice, computerChoice) {
 const buttons = document.querySelectorAll(".btn");
 
 buttons.forEach((button) => {
-  button.addEventListener("click", (e) => {
+  button.addEventListener("click", () => {
     let computerSelection = getComputerChoice();
-    playRound(e.target.textContent.toLowerCase(), computerSelection);
+    playRound(button.textContent.toLowerCase(), computerSelection);
   });
 });
