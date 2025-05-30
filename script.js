@@ -12,30 +12,32 @@ function getComputerChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
+const result = document.querySelector("div");
+
 function playRound(humanChoice, computerChoice) {
   if (humanChoice === "rock" && computerChoice === "scissor") {
-    console.log("You win! Rock beats Scissor");
+    result.textContent = "You win! Rock beats Scissors";
     humanScore++;
   } else if (humanChoice === "rock" && computerChoice === "paper") {
-    console.log("You lose! Paper beats Rock");
+    result.textContent = "You lose! Paper beats Rock";
     computerScore++;
   } else if (humanChoice === "rock" && computerChoice === "rock") {
-    console.log("It's a draw!");
+    result.textContent = "It's a draw!";
   } else if (humanChoice === "scissor" && computerChoice === "scissor") {
-    console.log("It's a draw!");
+    result.textContent = "It's a draw!";
   } else if (humanChoice === "scissor" && computerChoice === "paper") {
-    console.log("You Win! Scissor beats Paper");
+    result.textContent = "You Win! Scissors beats Paper";
     humanScore++;
   } else if (humanChoice === "scissor" && computerChoice === "rock") {
-    console.log("You lose! Rock beats Scissor");
+    result.textContent = "You lose! Rock beats Scissors";
     computerScore++;
   } else if (humanChoice === "paper" && computerChoice === "scissor") {
-    console.log("You lose! Scissor beats Paper");
+    result.textContent = "You Lose! Scissors beats Paper";
     computerScore++;
   } else if (humanChoice === "paper" && computerChoice === "paper") {
-    console.log("It's a draw!");
+    result.textContent = "It's a draw!";
   } else {
-    console.log("You win! Paper beats Rock");
+    result.textContent = "You win! Paper beats Rock";
     humanScore++;
   }
 
