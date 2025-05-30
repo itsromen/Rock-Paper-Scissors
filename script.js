@@ -12,6 +12,9 @@ function getComputerChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
+const score = document.createElement("div");
+score.classList = "score";
+document.body.appendChild(score);
 const result = document.querySelector("div");
 
 function playRound(humanChoice, computerChoice) {
@@ -43,7 +46,8 @@ function playRound(humanChoice, computerChoice) {
 
   if (humanScore === 5 || computerScore === 5) {
     const div = document.createElement("div");
-    div.innerHTML = "Game Over <br>";
+    div.classList = "winner";
+    div.innerHTML = "<br>Game Over<br>";
     if (humanScore > computerScore) {
       const status = document.createTextNode("You Win!!!");
       div.appendChild(status);
@@ -52,11 +56,15 @@ function playRound(humanChoice, computerChoice) {
       div.appendChild(status);
     }
 
+    const br = document.createElement("br");
+    div.append(br, "Reset Score");
     document.body.appendChild(div);
 
     humanScore = 0;
     computerScore = 0;
   }
+
+  score.textContent = `The current score is ${humanScore} for humans and ${computerScore} for machines`;
 }
 
 const buttons = document.querySelectorAll(".btn");
