@@ -48,11 +48,11 @@ function playGame() {
     let humanSelection;
     let computerSelection;
 
-    for (let i = 0; i < 5; i++) {
-        humanSelection = getHumanChoice();
-        computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-    }
+    // for (let i = 0; i < 5; i++) {
+    //     humanSelection = getHumanChoice();
+    //     computerSelection = getComputerChoice();
+    //     playRound(humanSelection, computerSelection);
+    // }
 
     console.log("Game Over");
     if (humanScore > computerScore) {
